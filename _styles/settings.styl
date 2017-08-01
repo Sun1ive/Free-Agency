@@ -1,0 +1,42 @@
+@font-face
+	font-family PT Sans;
+	src url("../_fonts/PT-Sans-regular.ttf");
+
+@font-face
+	font-family Helvetica Normal
+	src url("../_fonts/helvetica-normal.ttf") format('ttf')
+
+//====================
+// mixins
+// ===================
+font($size,$family,$weight,$color)
+	font-size $size
+	font-family $family
+	font-weight $weight
+	color: $color
+//====================
+// variables
+// ===================
+$red = #dd2a24
+$font = #424242
+$yellow = #f8cd53
+$pink = #f35e59
+$blue = #1287bf
+$lightgray = #515151
+$darkgray = #2a2a2a
+
+//====================
+// global
+// ===================
+body
+	padding 0
+	margin 0
+*
+	box-sizing: border-box
+
+a
+	text-decoration: none
+
+ul
+ol
+	list-style none

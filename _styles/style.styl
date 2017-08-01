@@ -1,0 +1,401 @@
+//====================
+// import
+// ===================
+@import ("smart-grid.styl");
+@import ("settings.styl");
+
+body
+	background url("../_img/ep_naturalblack.png")
+//====================
+// code
+// ===================
+.container
+	max-width 1400px;
+	margin 0 auto !important
+	background-color: #FFF
+	height 1000px
+
+.wrapper
+	background-color: #f0f2f4
+	border-bottom: 1px solid #c0c0c0
+	.first__header
+		margin 0 auto
+		max-width 1024px
+		display flex
+		justify-content flex-end
+		align-items center
+		height 45px
+		.info
+			display flex
+			li
+				margin: 0 10px
+				span
+					font(15px,Arial,400,$font)
+				a
+					color: $blue;
+
+header
+	flex-grow 0
+
+main
+	flex-grow 1
+
+footer
+	flex-grow 0
+
+.header
+	margin 0 auto
+	max-width 1024px
+	min-height 130px
+	display flex
+	justify-content space-between
+	align-items center
+	.header__logo
+		display flex
+		align-items center
+		col-4()
+		height 100%
+		&-logo
+			font-size 57px
+			color $red
+		&-text
+			padding-left: 10px
+			display flex
+			flex-flow column wrap
+			justify-content center
+			.h1
+				font(37px,Arial,700,$font)
+			.p
+				font(15px,PT Sans,400,$font)
+	.header__navBar
+		display flex
+		col-8()
+		justify-content flex-end
+		padding 0
+		for i in 1 2 3 4
+			li:nth-child({i})
+				margin: 0 10px
+		for i in 2 3 4
+			li:nth-child({i})
+				position relative
+				&:before
+					content "\2022"
+					padding-right: 15px
+		li
+			a
+				font(15px,PT Sans,bold,$font)
+			.active
+				color $red
+			.myButton
+				margin-left 10px
+				color #fff
+				padding 10px 20px
+				background-color: $red
+				border-radius 5px
+
+.banner
+	background-image: url("../_img/headerBG.png")
+	background-size: cover
+	background-repeat no-repeat
+	min-height 600px
+	display flex
+	flex-direction column
+	justify-content center
+	align-items center
+	text-align center
+	&__content-h1
+		font(48px,Arial,bold,#fff)
+	&__content-h2
+		font(30px,Arial,500,#fff)
+	&__button
+		background-color: $yellow
+		border-radius 5px
+		text-transform uppercase
+		font(22px,PT Sans,bold,#fff)
+		padding: 15px 40px
+		letter-spacing 1px
+		margin-top 30px
+		cursor pointer
+		&:hover
+			background-color: $yellow - 20%
+
+.services
+	min-height 540px
+	width 100%
+	background-color: #FFF
+	display flex
+	justify-content center
+	align-items center
+	flex-flow column wrap
+	text-align center
+	&__text
+		h1
+			font(36px,Arial,500,$font)
+			line-height 26px
+			margin 5px
+		p
+			font(20px,Arial,500,$font)
+			line-height 26px
+			margin 5px 5px 20px 5px
+		.border
+			border-bottom: 5px solid $font
+			width 60px
+			margin 0 auto 30px auto
+	&__review
+		max-width 1024px
+		display flex
+		flex-flow row wrap
+		&-block
+			col-4()
+			margin 0 auto
+			h2
+				font(22px,Arial,bold,$font)
+				width 80%
+				margin 10px auto
+			p
+				font(14px,Arial,400,$font)
+				width 70%
+				margin 10px auto
+				line-height 22px
+
+.approach
+	background-color: #f3f3f3
+	min-height 1410px
+	display flex
+	align-items center
+	flex-flow column wrap
+	&__wrapper
+		max-width 1024px
+	&__text
+		text-align center
+		h1
+			margin: 75px 0 10px 0;
+			font(36px,Arial,bold,$font)
+		p
+			font(20px,Arial,500,$font)
+			margin 0
+		.border
+			width 60px
+			border-bottom 5px solid $font
+			margin 10px auto
+	&__box
+		display flex
+		align-items center
+		background-color: #FFF
+		border 1px solid rgba(229, 229, 229, .9)
+		margin-top 50px;
+		for i in 1 3 5
+			&:nth-child({i})
+				flex-direction row-reverse
+				.step
+					left 58%
+		.step
+			width 100px
+			height 100px
+			background-color: $red
+			position absolute
+			left 35%
+			border 3px solid #fff
+			border-radius 5px
+			color #fff
+			font-size: 20px
+			font-family PT Sans
+			text-align center
+			display flex
+			flex-flow column wrap
+			span
+				font-size: 60px
+				font-family PT Sans
+			.st
+				font-size 20px
+				margin-top: -10px
+		&-wrapper
+			display flex
+			flex-flow column wrap
+			col-7()
+			margin 0 auto
+			padding-left 25px
+			h2
+				margin 5px
+				font(18px,Arial,bold,$font)
+			p
+				margin 5px
+				font(14px,Arial,500,$font)
+.right
+	align-items flex-end
+	h2
+		padding-right 30px
+
+.work
+	height 870px
+	background-color: $red
+	color #fff
+	&__text
+		text-align center
+		padding 75px 0 20px 0
+		h1
+			font(36px,PT Sans,700,#fff)
+			margin 5px
+		p
+			font(20px,PT Sans,400,#fff)
+			margin 5px
+		.border
+			width 60px
+			border 3px solid #fff
+			margin 25px auto
+	&__examples
+		row-flex()
+		max-width 1024px
+		margin 0 auto
+		&-box
+			width 255px
+			height 255px
+			background-color: $pink
+			display flex
+			justify-content center
+			align-items center
+			flex-flow column wrap
+			.icon
+				font-size: 36px
+				opacity: .7
+			h2
+				margin 25px 0 0 0
+				font(26px,PT Sans,700,#fff)
+			h3
+				margin 0
+				font(16px,PT Sans,500,#fff)
+
+.contact
+	background-color: $blue
+	height 850px
+	&__text
+		padding-top 75px
+		text-align center
+		col-8()
+		margin 0 auto
+		h1
+			font(36px,PT Sans,bold,#fff)
+		p
+			font(20px,PT Sans,400,#fff)
+		.button
+			height 70px
+			width 70px
+			border 3px solid #fff
+			border-radius 50%
+			margin 0 auto
+			font-size: 36px
+			color #fff
+			position relative
+			cursor: pointer
+			transition .4s
+			&:before
+				position absolute
+				content "\2039"
+				transform rotate(270deg)
+				top 22%
+				left 35%
+			&:hover
+				transform rotate(180deg)
+	&-wrapper
+		max-width: 1024px;
+		margin 0 auto
+		text-align center
+		#form
+			display flex
+			flex-flow column wrap
+			align-items center
+			margin 50px auto
+			col-8()
+			height 450px
+			background-color: #FFF
+			position relative
+			border-radius 3px
+			.border
+				position absolute
+				top -35px
+				left 286px
+				border-style: solid;
+				border-width: 0 40px 40px 40px;
+				border-color: transparent transparent #ffffff transparent;
+			h3
+				margin 60px 0 15px 0
+				font(15px,PT Sans,400,#b0b0b0)
+				col-10()
+			input[type="text"]
+				col-10()
+				height 50px
+				border 1px solid #c0c0c0
+				margin: 5px
+				border-radius 5px
+				padding-left 15px
+				color: #b0b0b0
+				&:focus
+					border 1px solid $blue
+					box-shadow: 0px 0px 5px $blue
+			.button
+				text-transform uppercase
+				color: #fff
+				font-size: 15px
+				padding: 15px 30px
+				background-color: $red
+				border none
+				border-radius 3px
+				margin-top 35px;
+
+.socials
+	min-height 490px
+	background-color: $darkgray
+	&__wrapper
+		min-height 490px
+		max-width 1024px
+		margin 0 auto
+		text-align center
+		&-h1
+			font(29px,PT Sans,bold,#fff)
+			padding-top 80px
+		&-socials
+			display flex
+			justify-content center
+			padding 0
+			margin-top 55px
+			li
+				a
+					padding 10px
+					border 1px solid $lightgray
+					margin: 20px 10px
+					border-radius 3px
+					color #fff
+					font-size: 24px
+					&:hover
+						border-color $red
+		&-para
+			font(14px,PT Sans,bold,#cecece)
+			padding-bottom 35px
+		input[type="email"]
+			col-8()
+			height 55px
+			background-color: $lightgray
+			padding-left 20px
+			border 1px solid $lightgray
+			color: #cecece
+			border-radius 2px
+			&:focus
+				outline 0
+		&-sub
+			font(17px,PT Sans,bold,#fff)
+			padding 15px 30px
+			border: 1px solid $lightgray
+			width 155px
+			height 50px
+			margin 25px auto
+			border-radius 3px
+			cursor pointer
+
+.footer
+	display flex
+	min-height 70px
+	margin-top -25px
+	background-color: $lightgray
+	justify-content center
+	align-items center
+	font(17px,PT Sans,bold,#cecece)
