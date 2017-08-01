@@ -43,7 +43,10 @@
 				<li><a class="myButton" href="#">Free Consultation</a></li>
 			</ul>
 			<div class="menu">
-			<img src="https://cdn2.iconfinder.com/data/icons/4web-3/139/menu-48.png">
+			<img src="https://cdn2.iconfinder.com/data/icons/4web-3/139/menu-48.png" @click="show = !show">
+			<ul v-if="show" :class="{ lowResMenu }">
+				<li v-for="list in menuList"><a :href="list.url">{{ list.item }}</a></li>
+			</ul>
 			</div>
 		</div>
 
@@ -57,7 +60,7 @@
 				</div>
 			</div>
 			<div class="banner__button">
-				Free consultation
+				<a href="#">Free consultation</a>
 			</div>
 		</div>
 	</header>
@@ -242,8 +245,10 @@
 		<div class="socials__wrapper-para">
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iure, quae.
 		</div>
+		<div id="sub">
 		<input type="email" name="email" placeholder="Email Adress">
-		<div class="socials__wrapper-sub">Subscribe</div>
+		<div class="socials__wrapper-sub" @click="subscribe()">Subscribe</div>
+		</div>
 	</div>
 </section>
 </main>

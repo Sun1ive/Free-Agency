@@ -137,6 +137,8 @@ footer
 		letter-spacing 1px
 		margin-top 30px
 		cursor pointer
+		a
+			color #fff
 		&:hover
 			background-color: $yellow - 20%
 
@@ -174,6 +176,11 @@ footer
 			col-xs-12()
 			xs(margin, 5px auto)
 			margin 0 auto
+			transition .4s
+			&:hover
+				border-radius 10px
+				box-shadow: 0 0 15px #7AA0FF
+				cursor: pointer
 			h2
 				font(22px,Arial,bold,$font)
 				width 80%
@@ -335,6 +342,7 @@ footer
 			sm(margin, 10px 5px)
 			xs(margin, 10px auto)
 			xxs(overflow, hidden)
+			transition .4s;
 			&:nth-child(5)
 				lg(order, -2)
 			&:hover
@@ -511,3 +519,12 @@ footer
 	justify-content center
 	align-items center
 	font(17px,PT Sans,bold,#cecece)
+
+.menu
+	text-align center
+.lowResMenu
+	display flex
+	flex-flow column wrap
+	align-items center
+	padding 0
+	margin 0
