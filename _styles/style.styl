@@ -13,7 +13,6 @@ body
 	max-width 1400px;
 	margin 0 auto !important
 	background-color: #FFF
-	height 1000px
 
 .wrapper
 	background-color: #f0f2f4
@@ -22,17 +21,22 @@ body
 		margin 0 auto
 		max-width 1024px
 		display flex
-		justify-content flex-end
-		align-items center
 		height 45px
 		.info
 			display flex
+			align-items center
+			justify-content flex-end
+			padding 0
+			justify-content-xs(center)
+			width 100%
 			li
 				margin: 0 10px
+				xs(margin, 0 5px)
 				span
 					font(15px,Arial,400,$font)
 				a
 					color: $blue;
+					font-size: 25px
 
 header
 	flex-grow 0
@@ -50,10 +54,16 @@ footer
 	display flex
 	justify-content space-between
 	align-items center
+	.menu
+		display none
+		xs(display, block)
+		margin-right: 20px
+		cursor pointer
 	.header__logo
 		display flex
 		align-items center
 		col-4()
+		sm(margin-left, 10px)
 		height 100%
 		&-logo
 			font-size 57px
@@ -69,25 +79,36 @@ footer
 				font(15px,PT Sans,400,$font)
 	.header__navBar
 		display flex
-		col-8()
+		flex-wrap wrap
+		col-9()
+		col-md-8()
+		col-sm-7()
+		xs(display, none)
 		justify-content flex-end
 		padding 0
-		for i in 1 2 3 4
-			li:nth-child({i})
-				margin: 0 10px
 		for i in 2 3 4
 			li:nth-child({i})
 				position relative
+				&:hover
+					&:before
+						color $red
 				&:before
 					content "\2022"
-					padding-right: 15px
+					md(display, none)
 		li
+			sm(padding, 10px 0)
 			a
+				padding 10px 20px
 				font(15px,PT Sans,bold,$font)
+				border-radius 5px
+				transition .3s;
+				md(padding,5px 9px)
+				&:hover
+					background-color: $red
+					color: #fff
 			.active
 				color $red
 			.myButton
-				margin-left 10px
 				color #fff
 				padding 10px 20px
 				background-color: $red
@@ -129,6 +150,7 @@ footer
 	flex-flow column wrap
 	text-align center
 	&__text
+		sm(margin-top, 30px)
 		h1
 			font(36px,Arial,500,$font)
 			line-height 26px
@@ -145,8 +167,12 @@ footer
 		max-width 1024px
 		display flex
 		flex-flow row wrap
+		xs(flex-flow, column wrap)
 		&-block
 			col-4()
+			col-sm-6()
+			col-xs-12()
+			xs(margin, 5px auto)
 			margin 0 auto
 			h2
 				font(22px,Arial,bold,$font)
@@ -165,9 +191,16 @@ footer
 	align-items center
 	flex-flow column wrap
 	&__wrapper
+		row-flex()
 		max-width 1024px
+		col-12()
 	&__text
+		width 100%
+		display flex
+		flex-flow column wrap
 		text-align center
+		align-items center
+		justify-content center
 		h1
 			margin: 75px 0 10px 0;
 			font(36px,Arial,bold,$font)
@@ -179,42 +212,63 @@ footer
 			border-bottom 5px solid $font
 			margin 10px auto
 	&__box
+		col-12()
 		display flex
 		align-items center
+		text-align center
+		sm(flex-direction, column)
+		col-sm-12()
+		sm(margin, 10px auto)
+		xs(overflow, hidden)
 		background-color: #FFF
 		border 1px solid rgba(229, 229, 229, .9)
 		margin-top 50px;
+		&-img
+			position relative
+			xxs(padding-top,15px)
+			.step
+				position absolute
+				width 100px
+				height 100px
+				background $red
+				top 28%
+				left 84%
+				display flex
+				flex-flow column no-wrap
+				font(60px,PT Sans,400,#fff)
+				border-radius 2px
+				border 3px solid #fff
+				xs(top, 0)
+				xs(left, 0)
+				xxs(height, 50px)
+				xxs(width, 50px)
+				xxs(left, 20%)
+				xxs(font-size, 20px)
+				.st
+					font-size: 20px
+					margin-top -7px
+					xxs(font-size, 14px)
+					xxs(margin-top,0)
 		for i in 1 3 5
 			&:nth-child({i})
 				flex-direction row-reverse
+				sm(flex-direction, column)
 				.step
-					left 58%
-		.step
-			width 100px
-			height 100px
-			background-color: $red
-			position absolute
-			left 35%
-			border 3px solid #fff
-			border-radius 5px
-			color #fff
-			font-size: 20px
-			font-family PT Sans
-			text-align center
-			display flex
-			flex-flow column wrap
-			span
-				font-size: 60px
-				font-family PT Sans
-			.st
-				font-size 20px
-				margin-top: -10px
+					left: -13%
+					xs(top, 0)
+					xs(left, 0)
+					xxs(height, 50px)
+					xxs(width, 50px)
+					xxs(left, 20%)
+					xxs(font-size, 20px)
 		&-wrapper
 			display flex
 			flex-flow column wrap
 			col-7()
+			col-sm-12()
 			margin 0 auto
 			padding-left 25px
+			xs(padding-left, 0)
 			h2
 				margin 5px
 				font(18px,Arial,bold,$font)
@@ -223,11 +277,28 @@ footer
 				font(14px,Arial,500,$font)
 .right
 	align-items flex-end
+	sm(align-items, center)
 	h2
 		padding-right 30px
+		md(padding-right, 60px)
+		xs(padding, 0)
+	p
+		lg(padding-right, 30px)
+		md(padding-right, 50px)
+		xs(padding, 0)
+
+.left
+	h2
+	p
+	md(padding-left, 50px)
+	xs(padding, 0)
 
 .work
-	height 870px
+	row-flex()
+	width 100%
+	margin 0 auto
+	flex-flow column wrap
+	min-height 870px
 	background-color: $red
 	color #fff
 	&__text
@@ -245,8 +316,10 @@ footer
 			margin 25px auto
 	&__examples
 		row-flex()
+		col-12()
 		max-width 1024px
-		margin 0 auto
+		margin 0 auto !important
+		sm(flex-direction, column)
 		&-box
 			width 255px
 			height 255px
@@ -255,6 +328,17 @@ footer
 			justify-content center
 			align-items center
 			flex-flow column wrap
+			overflow hidden
+			col-lg-5()
+			col-sm-12()
+			lg(margin, 15px auto)
+			sm(margin, 10px 5px)
+			xs(margin, 10px auto)
+			xxs(overflow, hidden)
+			&:nth-child(5)
+				lg(order, -2)
+			&:hover
+				background-color: $pink - 20%
 			.icon
 				font-size: 36px
 				opacity: .7
@@ -267,60 +351,64 @@ footer
 
 .contact
 	background-color: $blue
-	height 850px
+	min-height 850px
 	&__text
 		padding-top 75px
 		text-align center
 		col-8()
 		margin 0 auto
+		col-xs-12()
 		h1
 			font(36px,PT Sans,bold,#fff)
 		p
 			font(20px,PT Sans,400,#fff)
-		.button
-			height 70px
-			width 70px
-			border 3px solid #fff
-			border-radius 50%
-			margin 0 auto
-			font-size: 36px
-			color #fff
-			position relative
-			cursor: pointer
-			transition .4s
-			&:before
-				position absolute
-				content "\2039"
-				transform rotate(270deg)
-				top 22%
-				left 35%
-			&:hover
-				transform rotate(180deg)
 	&-wrapper
 		max-width: 1024px;
 		margin 0 auto
 		text-align center
+		min-height 100%
 		#form
 			display flex
 			flex-flow column wrap
 			align-items center
-			margin 50px auto
+			margin 150px auto 0px auto
 			col-8()
-			height 450px
+			col-xs-11()
+			xxs(margin, 100px auto 0 auto)
+			min-height 450px
 			background-color: #FFF
 			position relative
 			border-radius 3px
-			.border
+			.buttonCircle
 				position absolute
-				top -35px
-				left 286px
-				border-style: solid;
-				border-width: 0 40px 40px 40px;
-				border-color: transparent transparent #ffffff transparent;
+				height 70px
+				width 70px
+				border 3px solid #fff
+				border-radius 50%
+				margin 0 auto
+				font-size: 36px
+				top -120px
+				left: 44%
+				xs(top, -90px)
+				xs(left,41%)
+				xxs(left, 37%)
+				color #fff
+				cursor: pointer
+				transition .4s
+				&:before
+					position absolute
+					content "\2039"
+					transform rotate(270deg)
+					top 22%
+					left 35%
+				&:hover
+					transform rotate(180deg)
+					background-color: $yellow
 			h3
 				margin 60px 0 15px 0
-				font(15px,PT Sans,400,#b0b0b0)
+				font(15px,PT Sans,400,#9a9a9a)
 				col-10()
+				col-xs-11()
 			input[type="text"]
 				col-10()
 				height 50px
@@ -341,6 +429,7 @@ footer
 				border none
 				border-radius 3px
 				margin-top 35px;
+				xxs(margin-top, 20px)
 
 .socials
 	min-height 490px
