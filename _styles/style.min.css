@@ -787,41 +787,6 @@ footer {
   border-radius: 3px;
 }
 
-.contact-wrapper #form .buttonCircle {
-  position: absolute;
-  height: 70px;
-  width: 70px;
-  border: 3px solid #fff;
-  -webkit-border-radius: 50%;
-  border-radius: 50%;
-  margin: 0 auto;
-  font-size: 36px;
-  top: -120px;
-  left: 44%;
-  color: #fff;
-  cursor: pointer;
-  -webkit-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
-}
-
-.contact-wrapper #form .buttonCircle:before {
-  position: absolute;
-  content: "\2039";
-  -webkit-transform: rotate(270deg);
-  -ms-transform: rotate(270deg);
-  transform: rotate(270deg);
-  top: 22%;
-  left: 35%;
-}
-
-.contact-wrapper #form .buttonCircle:hover {
-  -webkit-transform: rotate(180deg);
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-  background-color: #f8cd53;
-}
-
 .contact-wrapper #form h3 {
   margin: 60px 0 15px 0;
   font-size: 15px;
@@ -860,6 +825,71 @@ footer {
   -webkit-border-radius: 3px;
   border-radius: 3px;
   margin-top: 35px;
+}
+
+#app {
+  position: relative;
+  min-height: 400px;
+}
+
+#app .buttonCircle {
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  border: 3px solid #fff;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  margin: 0 auto;
+  font-size: 36px;
+  top: 5%;
+  left: 46%;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+#app .buttonCircle:before {
+  position: absolute;
+  content: "\2039";
+  -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
+  transform: rotate(270deg);
+  top: 22%;
+  left: 35%;
+}
+
+#app .buttonCircle:hover {
+  background-color: #f8cd53;
+}
+
+#app .closeForm {
+  width: 50px;
+  height: 50px;
+  background-color: #dd2a24;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  right: 16%;
+  z-index: 5;
+  top: -4%;
+  border: 2px solid #fff;
+}
+
+#app .closeForm:after {
+  content: "X";
+  position: absolute;
+  font-size: 26px;
+  font-family: PT Sans;
+  color: #fff;
+  top: 7px;
+  left: 15px;
+  cursor: pointer;
+}
+
+#app .closeForm:hover {
+  background-color: #9c1c18;
 }
 
 .socials {
@@ -1224,17 +1254,17 @@ footer {
     width: calc(91.66666666666667% - 30px);
   }
 
-  .contact-wrapper #form .buttonCircle {
-    top: -90px;
-  }
-
-  .contact-wrapper #form .buttonCircle {
-    left: 41%;
-  }
-
   .contact-wrapper #form h3 {
     width: -webkit-calc(91.66666666666667% - 30px);
     width: calc(91.66666666666667% - 30px);
+  }
+
+  #app .buttonCircle {
+    left: 41%;
+  }
+
+  #app .closeForm {
+    right: 4%;
   }
 }
 
@@ -1323,11 +1353,11 @@ footer {
     margin: 100px auto 0 auto;
   }
 
-  .contact-wrapper #form .buttonCircle {
-    left: 37%;
-  }
-
   .contact-wrapper #form .button {
     margin-top: 20px;
+  }
+
+  #app .buttonCircle {
+    left: 37%;
   }
 }

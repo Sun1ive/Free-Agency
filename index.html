@@ -214,15 +214,18 @@
 		<h1>Get Your Free Facebook Analysis Now</h1>
 		<p>Enter your details belov</p>
 	</div>
-	<form id="form">
+	<div id="app">
+	<div @click="show = !show" class="buttonCircle"></div>
+	<div v-if="!show" class="closeForm" @click="show = !show"></div>
+	<form id="form" v-if="!show">
 		<h3>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quam officiis cumque quis repellendus beatae, cupiditate, eaque et! Perferendis, esse vero!</h3>
 		<input type="text" name="name" placeholder="Your Name">
 		<input type="text" name="number" placeholder="Your Number">
 		<input type="text" name="company" placeholder="Company Name">
-		<button type="" class="button">Submit now</button>
-		<div class="buttonCircle"></div>
+		<button type="submit" class="button" @click="created()">Submit now</button>
 	</form>
-		
+
+		</div>
 	</div>
 
 </section>
@@ -256,9 +259,9 @@
 
 
 
-<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script> -->
-<!-- <script src="_libs/jquery-3.2.1.min.js"></script> -->
-<!-- <script src="_scripts/common.min.js"></script> -->
-<!-- <script src="_scripts/common.js"></script> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.4.2/vue.min.js"></script>
+<!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
+<script src="_libs/jquery-3.2.1.min.js"></script>
+<script src="_scripts/common.js"></script>
 </body>
 </html>
